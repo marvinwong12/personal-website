@@ -34,11 +34,12 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-forest-100 sm:text-lg">
-            I like building agentic AI systems, fine-tuning models, and
-            wrangling messy real-world data (football matches, Reddit
-            threads, even bird calls) into something people can actually use.
-            Right now that means finishing my Master of Engineering in Data
-            Science at UCLA.
+            I am interested in agentic AI systems, fine-tuning models, and
+            wrangling messy real-world data into something people can
+            actually use. In particular, I enjoy answering questions I am
+            interested in, whether that be about football, Reddit threads,
+            or even bird calls. Right now, I&rsquo;m working on finishing my
+            Master of Engineering in Data Science at UCLA.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">

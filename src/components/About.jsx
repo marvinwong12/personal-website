@@ -17,7 +17,8 @@ export default function About() {
 
         <div className="space-y-6">
           <p className="text-lg leading-relaxed text-ink-700">
-            My journey into data started back in Hong Kong. These days
+            My journey into data started back in Hong Kong as a young
+            student taking AP Statistics. These days
             I&rsquo;m a Master of Engineering candidate in Data Science at
             UCLA, after finishing a B.S. in Data Theory and Atmospheric
             &amp; Oceanic Sciences. It&rsquo;s a strange combo on paper, but
@@ -27,10 +28,9 @@ export default function About() {
           <p className="text-lg leading-relaxed text-ink-700">
             Along the way I&rsquo;ve worked as an atmospheric data scientist
             at HKUST and a data analyst intern at PricewaterhouseCoopers.
-            But outside of coursework, I&rsquo;m usually building agentic AI
-            systems and end-to-end ML pipelines for fun. That&rsquo;s honestly
-            where I&rsquo;ve learned the most, so take a look at what
-            I&rsquo;ve been building below.
+            But outside of coursework, I&rsquo;m usually tackling problems
+            that fascinate me. That&rsquo;s honestly where I&rsquo;ve learned
+            the most, so take a look at what I&rsquo;ve been building below.
           </p>
         </div>
       </div>

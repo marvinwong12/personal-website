@@ -45,8 +45,8 @@ export default function Contact() {
         </h2>
         <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-forest-200">
           I&rsquo;m looking for new-grad Data Science / ML Engineering roles
-          starting 2026. Reach out &mdash; I usually reply within a day or
-          two.
+          starting the end of 2026. Reach out &mdash; I usually reply within
+          a day or two.
         </p>
 
         <a
