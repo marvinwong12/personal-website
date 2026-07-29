@@ -1,6 +1,9 @@
-import { ArrowRight, Download, MapPin } from 'lucide-react'
+import { ArrowRight, FileText, MapPin } from 'lucide-react'
+import { useResumeModal } from '../context/ResumeModalContext'
 
 export default function Hero() {
+  const { openResume } = useResumeModal()
+
   return (
     <section
       id="hero"
@@ -31,10 +34,11 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-forest-100 sm:text-lg">
-            I build agentic AI systems, fine-tune models, and turn messy
-            real-world data — football matches, Reddit threads, bird calls —
-            into things people can actually use. Currently completing my
-            Master of Engineering in Data Science at UCLA.
+            I like building agentic AI systems, fine-tuning models, and
+            wrangling messy real-world data (football matches, Reddit
+            threads, even bird calls) into something people can actually use.
+            Right now that means finishing my Master of Engineering in Data
+            Science at UCLA.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -49,14 +53,14 @@ export default function Hero() {
                 aria-hidden="true"
               />
             </a>
-            <a
-              href="/Marvin_Wong_Resume.pdf"
-              download
+            <button
+              type="button"
+              onClick={openResume}
               className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-forest-500 px-6 py-3 font-mono text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:border-gold-400 hover:text-gold-300"
             >
-              <Download size={16} aria-hidden="true" />
-              Download Resume
-            </a>
+              <FileText size={16} aria-hidden="true" />
+              View Resume
+            </button>
           </div>
         </div>
 

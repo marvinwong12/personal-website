@@ -1,6 +1,9 @@
-import { Download, FileText } from 'lucide-react'
+import { Eye, FileText } from 'lucide-react'
+import { useResumeModal } from '../context/ResumeModalContext'
 
 export default function ResumeCTA() {
+  const { openResume } = useResumeModal()
+
   return (
     <section id="resume" className="bg-ivory-100 py-24">
       <div className="mx-auto max-w-4xl px-6">
@@ -22,14 +25,14 @@ export default function ResumeCTA() {
             </p>
           </div>
 
-          <a
-            href="/Marvin_Wong_Resume.pdf"
-            download
+          <button
+            type="button"
+            onClick={openResume}
             className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-forest-800 px-7 py-3.5 font-mono text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700"
           >
-            <Download size={16} aria-hidden="true" />
-            Download Resume (PDF)
-          </a>
+            <Eye size={16} aria-hidden="true" />
+            View Resume
+          </button>
         </div>
       </div>
     </section>

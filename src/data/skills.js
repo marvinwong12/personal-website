@@ -12,14 +12,15 @@ export const skillGroups = [
       'Predictive Modeling',
       'Prompt Engineering',
       'MCP',
+      'LangChain',
     ],
   },
   {
     label: 'Data Engineering & Cloud',
-    items: ['AWS', 'Spark', 'Databricks', 'Docker', 'ETL'],
+    items: ['AWS', 'GCP', 'Spark', 'Databricks', 'Docker', 'ETL'],
   },
   {
     label: 'Visualization & Analytics',
-    items: ['Tableau', 'Matplotlib', 'Pandas', 'NumPy'],
+    items: ['Tableau', 'Matplotlib', 'Pandas', 'NumPy', 'Excel'],
   },
 ]

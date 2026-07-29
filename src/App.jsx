@@ -6,11 +6,13 @@ import Intro from './components/Intro'
 import Nav from './components/Nav'
 import Projects from './components/Projects'
 import ResumeCTA from './components/ResumeCTA'
+import ResumeModal from './components/ResumeModal'
 import Skills from './components/Skills'
+import { ResumeModalProvider } from './context/ResumeModalContext'
 
 function App() {
   return (
-    <>
+    <ResumeModalProvider>
       <a
         href="#top"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-forest-800 focus:px-4 focus:py-2 focus:text-ivory-50"
@@ -28,7 +30,8 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+      <ResumeModal />
+    </ResumeModalProvider>
   )
 }
 

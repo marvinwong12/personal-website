@@ -12,8 +12,7 @@ export default function Projects() {
           A few things I&rsquo;ve built
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-700">
-          Mostly agentic AI systems and applied ML, with a few side quests
-          into audio and climate data.
+          Project ideas that tickled my fancy
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">

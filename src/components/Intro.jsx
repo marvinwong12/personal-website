@@ -1,6 +1,25 @@
+import { useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { prefersReducedMotion } from '../lib/motionPreference'
+
+const GREETING = "Hi, I'm Marvin"
 
 export default function Intro() {
+  const [typed, setTyped] = useState(prefersReducedMotion ? GREETING : '')
+
+  useEffect(() => {
+    if (prefersReducedMotion) return
+
+    let i = 0
+    const interval = setInterval(() => {
+      i += 1
+      setTyped(GREETING.slice(0, i))
+      if (i >= GREETING.length) clearInterval(interval)
+    }, 110)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section
       id="top"
@@ -16,8 +35,14 @@ export default function Intro() {
         }}
       />
 
-      <h1 className="relative px-6 text-center font-display text-5xl font-semibold leading-none tracking-tight sm:text-6xl md:text-7xl">
-        Marvin Wong
+      <h1 className="relative px-6 text-center font-display text-4xl font-semibold leading-none tracking-tight sm:text-6xl md:text-7xl">
+        <span aria-hidden="true">
+          {typed}
+          <span className="animate-blink ml-1 inline-block w-[0.5ch] font-mono">
+            |
+          </span>
+        </span>
+        <span className="sr-only">{GREETING}</span>
       </h1>
 
       <a

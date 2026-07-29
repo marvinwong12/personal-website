@@ -6,7 +6,7 @@ export default function ProjectCard({ project }) {
     project
 
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-ivory-200 bg-ivory-50 p-8 shadow-sm transition-shadow hover:shadow-md">
+    <article className="relative flex h-full flex-col rounded-2xl border border-ivory-200 bg-ivory-50 p-8 shadow-sm transition-all duration-300 ease-out hover:z-10 hover:-translate-y-1.5 hover:scale-[1.03] hover:shadow-xl">
       <div className="flex items-start justify-between gap-4">
         <h3 className="font-display text-xl font-semibold text-ink-900">
           {name}
