@@ -22,7 +22,7 @@ export const projects = [
     tech: ['RoBERTa', 'PyTorch', 'Hugging Face', 'FastAPI', 'Docker', 'GCP Cloud Run'],
     status: 'live',
     github: 'https://github.com/marvinwong12/aita_classifier',
-    demo: 'https://aita-classifier-marvin-xxxx.a.run.app',
+    demo: 'https://aita-classifier-482267030164.us-central1.run.app/',
     metric: { label: 'Macro F1', value: '0.46 → 0.71+' },
   },
   {
