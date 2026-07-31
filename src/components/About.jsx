@@ -15,7 +15,7 @@ export default function About() {
           <p className="text-lg leading-relaxed text-ink-700">
             I&rsquo;m a current Master of Engineering candidate in Data
             Science at UCLA, where I have not only been learning about
-            advanced NLP and massive scale machine learning, but have also been honing
+            advanced NLP and massive-scale machine learning, but have also been honing
             my professional skills through product management and financial
             analysis classes. Prior to this, I earned dual B.S.
             degrees in Data Theory and Atmospheric &amp; Oceanic Sciences,
