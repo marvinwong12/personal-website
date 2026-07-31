@@ -1,4 +1,4 @@
-## Football Scouting Agent — behind the scenes
+## Chief Scout OS — behind the scenes
 
 Marvin wanted to try building an agent, and playing Football Manager
 inspired him to build one that helps scout new talent — a domain where he
@@ -15,7 +15,7 @@ he'd use different hosting than Streamlit (slow to wake up after
 inactivity) and try to find a more consolidated, extensive stats source
 instead of merging four different platforms.
 
-## r/AITA Classifier — behind the scenes
+## r/(AI)TA — behind the scenes
 
 The idea started as a running joke: Marvin and his friends used to mock
 Reddit's "hivemind" reputation, playing a game on r/AskReddit where they'd
@@ -37,7 +37,7 @@ where the model failed was as interesting as getting it to succeed. If he
 did it again, he'd like to compare against a modern frontier LLM, budget
 and token limits permitting.
 
-## BirdCall Classifier — behind the scenes
+## BirdCLEF Birdcall Detector — behind the scenes
 
 His undergraduate Data Theory capstone. The team wanted to work with audio
 data specifically because none of them had experience there. The hardest
@@ -54,7 +54,7 @@ labeled clips, then iteratively relabeling and retraining. In hindsight,
 he'd explore more model architectures and data augmentation beyond the
 mixing approach they used.
 
-## Goodreads Recommender — behind the scenes
+## Sci-fi and Fantasy Book Recommendation Model — behind the scenes
 
 Marvin loves reading but is often frustrated by the recommendations he
 gets, so he wanted to look under the hood of how these systems actually

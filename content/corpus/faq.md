@@ -14,7 +14,7 @@ end, not just a notebook that runs once.
 
 ## Tell me about a time you failed — what did you learn?
 
-The r/AITA classifier project. Going in, Marvin wanted to test a theory:
+The r/(AI)TA project. Going in, Marvin wanted to test a theory:
 that Reddit is enough of a "hivemind" that you could predict the
 community's verdict from the text of a post alone. A simple TF-IDF
 baseline barely worked, so he fine-tuned a RoBERTa model instead, which
@@ -73,6 +73,6 @@ used before. Outside of that, he's actively trying to upskill his
 production deployment and cloud skills — he's comfortable with things like
 Spark, Databricks, and cloud deployment, but hasn't used them at real
 industry scale yet, so that's a deliberate gap he's closing. He's also
-curious how a modern frontier LLM would do on his old r/AITA classifier
+curious how a modern frontier LLM would do on his old r/(AI)TA
 problem compared to his fine-tuned RoBERTa model — that's on his list of
 side projects to revisit at some point.

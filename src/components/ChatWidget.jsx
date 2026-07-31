@@ -153,7 +153,7 @@ export default function ChatWidget() {
               >
                 {m.role === 'assistant' && <PetDuoAvatar size={26} />}
                 <p
-                  className={`max-w-[80%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                  className={`max-w-[80%] min-w-0 whitespace-pre-wrap break-words rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                     m.role === 'user'
                       ? 'bg-forest-800 text-ivory-50'
                       : 'bg-ivory-200 text-ink-900'

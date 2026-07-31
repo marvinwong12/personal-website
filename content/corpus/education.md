@@ -31,8 +31,8 @@ they only worked in 2D).
 
 ## Capstones and standout coursework
 
-Marvin's undergraduate capstone was the BirdCLEF+ bird call classifier
-project. His graduate capstone is working with Securiport on a
+Marvin's undergraduate capstone was the BirdCLEF Birdcall Detector
+project, built on the Kaggle BirdCLEF+ dataset. His graduate capstone is working with Securiport on a
 facial/visual recognition pipeline that helps expedite airport security
 processes. In his Neural Networks and Deep Learning class, he also built an
 EMSG decoder using a hybrid GRU/CNN architecture — his first time designing
