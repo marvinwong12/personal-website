@@ -24,8 +24,8 @@ export default function About() {
           </p>
           <p className="text-lg leading-relaxed text-ink-700">
             Along the way I&rsquo;ve picked up valuable skills working as an atmospheric data scientist
-            at HKUST and a data analyst intern at PricewaterhouseCoopers.
-            Outside of coursework, I&rsquo;m tackling problems that fascinate
+            at HKUST and a data analyst intern at PwC.
+            Outside of coursework, I enjoy tackling problems that fascinate
             me. Please check out some of what I&rsquo;ve been building below.
           </p>
         </div>
