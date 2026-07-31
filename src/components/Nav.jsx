@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useResumeModal } from '../context/ResumeModalContext'
 
 const links = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
-  { href: '#resume', label: 'Resume' },
+  { label: 'Resume', action: 'resume' },
   { href: '#contact', label: 'Contact' },
 ]
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { openResume } = useResumeModal()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -37,21 +39,33 @@ export default function Nav() {
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="font-mono text-xs uppercase tracking-widest text-ink-700 transition-colors hover:text-forest-800"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {links.map((link) =>
+            link.action === 'resume' ? (
+              <li key={link.label}>
+                <button
+                  type="button"
+                  onClick={openResume}
+                  className="cursor-pointer font-body text-xs font-semibold uppercase tracking-widest text-ink-700 transition-colors hover:text-forest-800"
+                >
+                  {link.label}
+                </button>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="font-body font-semibold text-xs uppercase tracking-widest text-ink-700 transition-colors hover:text-forest-800"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ),
+          )}
         </ul>
 
         <a
           href="#contact"
-          className="hidden rounded-full bg-forest-800 px-5 py-2 font-mono text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700 md:inline-block cursor-pointer"
+          className="hidden rounded-full bg-forest-800 px-5 py-2 font-body font-semibold text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700 md:inline-block cursor-pointer"
         >
           Let&rsquo;s talk
         </a>
@@ -69,17 +83,32 @@ export default function Nav() {
 
       {open && (
         <ul className="flex flex-col gap-1 border-t border-ivory-200 bg-ivory-50 px-6 pb-6 pt-2 md:hidden">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block py-3 font-mono text-sm uppercase tracking-widest text-ink-700"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {links.map((link) =>
+            link.action === 'resume' ? (
+              <li key={link.label}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false)
+                    openResume()
+                  }}
+                  className="block w-full cursor-pointer py-3 text-left font-body text-sm font-semibold uppercase tracking-widest text-ink-700"
+                >
+                  {link.label}
+                </button>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 font-body font-semibold text-sm uppercase tracking-widest text-ink-700"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ),
+          )}
         </ul>
       )}
     </header>

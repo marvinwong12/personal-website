@@ -35,14 +35,14 @@ export default function ResumeModal() {
     >
       <div className="animate-scale-in flex h-[85vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-ivory-50 shadow-2xl">
         <div className="flex shrink-0 items-center justify-between border-b border-forest-700/10 bg-ivory-100 px-6 py-4">
-          <p className="font-mono text-xs uppercase tracking-widest text-forest-600">
+          <p className="font-body font-semibold text-xs uppercase tracking-widest text-forest-600">
             Marvin Wong &mdash; Resume
           </p>
           <div className="flex items-center gap-2">
             <a
               href="/Marvin_Wong_Resume.pdf"
               download
-              className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-forest-800 px-4 py-2 font-mono text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-forest-800 px-4 py-2 font-body font-semibold text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700"
             >
               <Download size={14} aria-hidden="true" />
               Download
@@ -71,7 +71,7 @@ export default function ResumeModal() {
               <a
                 href="/Marvin_Wong_Resume.pdf"
                 download
-                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-forest-800 px-6 py-3 font-mono text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700"
+                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-forest-800 px-6 py-3 font-body font-semibold text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700"
               >
                 <Download size={16} aria-hidden="true" />
                 Download Resume (PDF)

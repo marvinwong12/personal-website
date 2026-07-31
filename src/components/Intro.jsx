@@ -50,7 +50,7 @@ export default function Intro() {
         aria-label="Scroll down"
         className="absolute bottom-10 inline-flex cursor-pointer flex-col items-center gap-2 text-forest-300 transition-colors hover:text-gold-400"
       >
-        <span className="font-mono text-[0.65rem] uppercase tracking-widest">
+        <span className="font-body text-[0.65rem] font-semibold uppercase tracking-widest">
           Scroll
         </span>
         <ChevronDown size={18} className="motion-safe:animate-bounce" aria-hidden="true" />

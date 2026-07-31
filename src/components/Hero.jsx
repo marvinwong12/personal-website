@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, MapPin } from 'lucide-react'
+import { ArrowRight, FileText } from 'lucide-react'
 import { useResumeModal } from '../context/ResumeModalContext'
 
 export default function Hero() {
@@ -21,11 +21,6 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 py-24 md:grid-cols-[1.15fr_0.85fr] md:py-32">
         <div>
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-forest-600/60 bg-forest-900/60 px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-forest-200">
-            <MapPin size={14} className="text-gold-400" aria-hidden="true" />
-            Los Angeles · Open to new-grad roles
-          </p>
-
           <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ivory-50 sm:text-5xl lg:text-6xl">
             Marvin Wong
           </h1>
@@ -36,16 +31,13 @@ export default function Hero() {
           <p className="mt-6 max-w-xl text-base leading-relaxed text-forest-100 sm:text-lg">
             I am interested in agentic AI systems, fine-tuning models, and
             wrangling messy real-world data into something people can
-            actually use. In particular, I enjoy answering questions I am
-            interested in, whether that be about football, Reddit threads,
-            or even bird calls. Right now, I&rsquo;m working on finishing my
-            Master of Engineering in Data Science at UCLA.
+            actually use.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-gold-500 px-6 py-3 font-mono text-xs uppercase tracking-widest text-ink-900 transition-colors hover:bg-gold-400"
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-gold-500 px-6 py-3 font-body font-semibold text-xs uppercase tracking-widest text-ink-900 transition-colors hover:bg-gold-400"
             >
               View Projects
               <ArrowRight
@@ -57,7 +49,7 @@ export default function Hero() {
             <button
               type="button"
               onClick={openResume}
-              className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-forest-500 px-6 py-3 font-mono text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:border-gold-400 hover:text-gold-300"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-forest-500 px-6 py-3 font-body font-semibold text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:border-gold-400 hover:text-gold-300"
             >
               <FileText size={16} aria-hidden="true" />
               View Resume

@@ -1,11 +1,11 @@
 import About from './components/About'
+import ChatWidget from './components/ChatWidget'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Intro from './components/Intro'
 import Nav from './components/Nav'
 import Projects from './components/Projects'
-import ResumeCTA from './components/ResumeCTA'
 import ResumeModal from './components/ResumeModal'
 import Skills from './components/Skills'
 import { ResumeModalProvider } from './context/ResumeModalContext'
@@ -26,11 +26,11 @@ function App() {
         <About />
         <Skills />
         <Projects />
-        <ResumeCTA />
         <Contact />
       </main>
       <Footer />
       <ResumeModal />
+      <ChatWidget />
     </ResumeModalProvider>
   )
 }
