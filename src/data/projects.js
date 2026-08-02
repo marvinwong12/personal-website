@@ -56,13 +56,22 @@ export const projects = [
     tagline:
       'Multi-stage recommendation pipeline that surfaces new sci-fi and fantasy books to read based on past user history. Trained using Goodreads interaction data.',
     description:
-      'Exploring collaborative filtering and embedding-based approaches to recommend books from user interaction and rating data. Actively in development.',
-    tech: ['Python', 'Recommender Systems', 'Embeddings'],
+      'A two-stage recommendation system built on the UCSD Goodreads interaction dataset (~110K books). Stage 1 blends three independent retrieval channels: 1) a LightGCN graph neural network trained via BPR loss on a k-core interaction graph, 2) sentence-transformer + FAISS semantic similarity over book descriptions, and 3) a sparse item-item co-occurrence model. These scores are fused with a dynamic weighting scheme that favors content similarity for newer users and collaborative signals as reading history grows. Stage 2 reranks the retrieved candidate pool with an XGBoost  model optimized for Net Discounted Cumulative Gain using the retrieval scores and additional author/popularity features. The pipeline handles cold-start users natively by folding new reads into an approximate graph embedding. On a time-based held-out split, the full pipeline reaches NDCG@10 of 0.1244 and HR@10 of 0.291. Deployed via Docker on Google Cloud Run.',
+    tech: [
+      'PyTorch',
+      'PySpark',
+      'Graph Neural Networks (GNN)',
+      'FAISS / Vector Search',
+      'Optuna',
+      'FastAPI',
+      'Docker',
+      'Google Cloud Platform (GCP)',
+    ],
     category: 'Recommender Systems',
     image: '/projects/goodreads-recommender.svg',
-    status: 'in-progress',
+    status: 'live',
     github: 'https://github.com/marvinwong12/goodreads_recommender',
-    demo: null,
+    demo: 'https://scifi-fantasy-recommender-1093855474171.us-central1.run.app/',
     metric: null,
   },
 ]
