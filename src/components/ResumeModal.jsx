@@ -33,16 +33,16 @@ export default function ResumeModal() {
       aria-modal="true"
       aria-label="Resume preview"
     >
-      <div className="animate-scale-in flex h-[85vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-ivory-50 shadow-2xl">
-        <div className="flex shrink-0 items-center justify-between border-b border-forest-700/10 bg-ivory-100 px-6 py-4">
-          <p className="font-body font-semibold text-xs uppercase tracking-widest text-forest-600">
+      <div className="animate-scale-in flex h-[85vh] w-full max-w-3xl flex-col overflow-hidden bg-ivory-50 shadow-2xl">
+        <div className="flex shrink-0 items-center justify-between border-b border-ink-900/10 px-6 py-4">
+          <p className="font-body font-semibold text-xs uppercase tracking-widest text-ink-700">
             Marvin Wong &mdash; Resume
           </p>
           <div className="flex items-center gap-2">
             <a
               href="/Marvin_Wong_Resume.pdf"
               download
-              className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-forest-800 px-4 py-2 font-body font-semibold text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700"
+              className="inline-flex cursor-pointer items-center gap-2 border border-ink-900/15 px-4 py-2 font-body font-semibold text-xs uppercase tracking-widest text-ink-900 transition-colors hover:border-gold-600 hover:text-gold-600"
             >
               <Download size={14} aria-hidden="true" />
               Download
@@ -51,14 +51,14 @@ export default function ResumeModal() {
               type="button"
               onClick={closeResume}
               aria-label="Close resume preview"
-              className="cursor-pointer rounded-full p-2 text-ink-700 transition-colors hover:bg-ivory-200 hover:text-ink-900"
+              className="cursor-pointer p-2 text-ink-700 transition-colors hover:bg-ink-900/5 hover:text-ink-900"
             >
               <X size={20} aria-hidden="true" />
             </button>
           </div>
         </div>
 
-        <div className="min-h-0 flex-1 bg-ink-500/10">
+        <div className="min-h-0 flex-1 bg-ink-900/5">
           <iframe
             src="/Marvin_Wong_Resume.pdf"
             title="Marvin Wong Resume"
@@ -71,7 +71,7 @@ export default function ResumeModal() {
               <a
                 href="/Marvin_Wong_Resume.pdf"
                 download
-                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-forest-800 px-6 py-3 font-body font-semibold text-xs uppercase tracking-widest text-ivory-50 transition-colors hover:bg-forest-700"
+                className="inline-flex cursor-pointer items-center gap-2 border border-ink-900/15 px-6 py-3 font-body font-semibold text-xs uppercase tracking-widest text-ink-900 transition-colors hover:border-gold-600 hover:text-gold-600"
               >
                 <Download size={16} aria-hidden="true" />
                 Download Resume (PDF)

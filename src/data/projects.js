@@ -36,7 +36,7 @@ export const projects = [
   },
   {
     slug: 'birdcall-classifier',
-    name: 'BirdCLEF Birdcall Detector',
+    name: 'Caw Call',
     tagline:
       'A bioacoustic CNN trained on the Kaggle BirdCLEF+ dataset to identify bird species from raw audio.',
     description:
@@ -52,7 +52,7 @@ export const projects = [
   },
   {
     slug: 'goodreads-recommender',
-    name: 'Sci-fi and Fantasy Book Recommendation Model',
+    name: 'Bookwyrm',
     tagline:
       'Multi-stage recommendation pipeline that surfaces new sci-fi and fantasy books to read based on past user history. Trained using Goodreads interaction data.',
     description:
@@ -69,6 +69,7 @@ export const projects = [
     ],
     category: 'Recommender Systems',
     image: '/projects/goodreads-recommender.svg',
+    modalImages: ['/projects/goodreads-recommender-demo.png'],
     status: 'live',
     github: 'https://github.com/marvinwong12/goodreads_recommender',
     demo: 'https://scifi-fantasy-recommender-1093855474171.us-central1.run.app/',

@@ -37,7 +37,7 @@ where the model failed was as interesting as getting it to succeed. If he
 did it again, he'd like to compare against a modern frontier LLM, budget
 and token limits permitting.
 
-## BirdCLEF Birdcall Detector — behind the scenes
+## Caw Call — behind the scenes
 
 His undergraduate Data Theory capstone. The team wanted to work with audio
 data specifically because none of them had experience there. The hardest
@@ -54,7 +54,7 @@ labeled clips, then iteratively relabeling and retraining. In hindsight,
 he'd explore more model architectures and data augmentation beyond the
 mixing approach they used.
 
-## Sci-fi and Fantasy Book Recommendation Model — behind the scenes
+## Bookwyrm — behind the scenes
 
 Marvin loves reading but is often frustrated by the recommendations he
 gets, so he wanted to look under the hood of how these systems actually

@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronRight, Users, X } from 'lucide-react'
+import { ArrowUpRight, Users, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { projects } from '../data/projects'
 import { GithubIcon } from './icons/BrandIcons'
@@ -23,8 +23,7 @@ function ProjectDetailModal({ project, onClose }) {
 
   if (!project) return null
 
-  const { name, category, description, tech, github, demo, teamProject, demoVideo, modalImages } =
-    project
+  const { name, description, tech, github, demo, teamProject, demoVideo, modalImages } = project
 
   return (
     <div
@@ -36,16 +35,13 @@ function ProjectDetailModal({ project, onClose }) {
       aria-modal="true"
       aria-label={`${name} details`}
     >
-      <div className="animate-scale-in flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl bg-ivory-50 shadow-2xl">
-        <div className="flex shrink-0 items-center justify-between border-b border-forest-700/10 bg-ivory-100 px-6 py-4">
-          <p className="font-body text-xs font-semibold uppercase tracking-widest text-gold-600">
-            {category}
-          </p>
+      <div className="animate-scale-in flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden bg-ivory-50 shadow-2xl">
+        <div className="flex shrink-0 items-center justify-end border-b border-ink-900/10 px-6 py-4">
           <button
             type="button"
             onClick={onClose}
             aria-label="Close project details"
-            className="cursor-pointer rounded-full p-2 text-ink-700 transition-colors hover:bg-ivory-200 hover:text-ink-900"
+            className="cursor-pointer p-2 text-ink-700 transition-colors hover:bg-ink-900/5 hover:text-ink-900"
           >
             <X size={20} aria-hidden="true" />
           </button>
@@ -56,16 +52,14 @@ function ProjectDetailModal({ project, onClose }) {
             {name}
           </h3>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            {tech.map((item) => (
-              <span
-                key={item}
-                className="rounded-full bg-ivory-100 px-3 py-1 font-body text-xs font-semibold uppercase tracking-widest text-ink-700"
-              >
+          <p className="mt-4 font-body text-xs font-semibold uppercase tracking-widest text-ink-700">
+            {tech.map((item, i) => (
+              <span key={item}>
                 {item}
+                {i < tech.length - 1 && <span className="text-ink-900/25"> &middot; </span>}
               </span>
             ))}
-          </div>
+          </p>
 
           {modalImages && modalImages.length > 0 && (
             <div className="mt-4 flex flex-col gap-3">
@@ -74,7 +68,7 @@ function ProjectDetailModal({ project, onClose }) {
                   key={src}
                   src={src}
                   alt={`${name} visualization`}
-                  className="w-full rounded-xl border border-forest-700/10"
+                  className="w-full border border-ink-900/10"
                 />
               ))}
             </div>
@@ -84,7 +78,7 @@ function ProjectDetailModal({ project, onClose }) {
             <img
               src={demoVideo}
               alt={`${name} demo`}
-              className="mt-4 w-full rounded-xl border border-forest-700/10"
+              className="mt-4 w-full border border-ink-900/10"
             />
           )}
 
@@ -95,7 +89,7 @@ function ProjectDetailModal({ project, onClose }) {
           ))}
 
           {teamProject && (
-            <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-ink-500">
+            <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-ink-700">
               <Users size={13} aria-hidden="true" />
               Team project &mdash; repo hosted by a teammate
             </p>
@@ -106,7 +100,7 @@ function ProjectDetailModal({ project, onClose }) {
               href={github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-forest-700"
+              className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-gold-600"
             >
               <GithubIcon size={16} />
               Code
@@ -116,7 +110,7 @@ function ProjectDetailModal({ project, onClose }) {
                 href={demo}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-forest-700"
+                className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-gold-600"
               >
                 <ArrowUpRight size={16} aria-hidden="true" />
                 Live demo
@@ -130,7 +124,7 @@ function ProjectDetailModal({ project, onClose }) {
 }
 
 function ProjectRow({ project, index, onOpenDetails }) {
-  const { name, tagline, category } = project
+  const { name, tagline } = project
   const [isVisible, setIsVisible] = useState(prefersReducedMotion)
   const ref = useRef(null)
 
@@ -156,30 +150,18 @@ function ProjectRow({ project, index, onOpenDetails }) {
     <article
       ref={ref}
       style={{ transitionDelay: prefersReducedMotion ? '0ms' : `${index * 80}ms` }}
-      className={`border-b border-forest-700/15 py-12 transition-all duration-700 ease-out last:border-b-0 last:pb-0 ${
+      className={`border-b border-forest-300/15 py-6 transition-all duration-700 ease-out last:border-b-0 last:pb-0 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
       }`}
     >
-      <p className="font-body text-xs font-semibold uppercase tracking-widest text-gold-600">
-        {category}
-      </p>
-      <h3 className="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">
-        {name}
-      </h3>
-      <p className="mt-3 max-w-2xl text-lg leading-relaxed text-ink-700">{tagline}</p>
-
       <button
         type="button"
         onClick={() => onOpenDetails(project)}
-        className="group mt-4 inline-flex cursor-pointer items-center gap-1 text-sm font-medium text-forest-700 transition-colors hover:text-forest-800"
+        className="block w-full cursor-pointer text-left font-display text-lg font-semibold text-ivory-50 underline decoration-forest-300/40 underline-offset-4 transition-colors hover:text-gold-400 hover:decoration-gold-400"
       >
-        View details
-        <ChevronRight
-          size={15}
-          className="transition-transform duration-200 group-hover:translate-x-0.5"
-          aria-hidden="true"
-        />
+        {name}
       </button>
+      <p className="mt-2 max-w-2xl text-lg leading-relaxed text-forest-100">{tagline}</p>
     </article>
   )
 }
@@ -188,7 +170,7 @@ export default function ProjectList() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <div className="mt-12 border-t border-forest-700/15">
+    <div className="mt-12 border-t border-forest-300/15">
       {projects.map((project, i) => (
         <ProjectRow
           key={project.slug}

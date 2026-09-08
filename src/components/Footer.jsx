@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-forest-950 py-8 text-forest-300">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-center sm:flex-row sm:justify-between sm:text-left sm:pr-24">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-[4.5rem] text-center sm:flex-row sm:justify-between sm:text-left">
         <p className="font-body font-semibold text-xs tracking-wide">
           &copy; {new Date().getFullYear()} Marvin Wong. Built with React &amp;
           Tailwind.

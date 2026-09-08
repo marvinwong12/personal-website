@@ -18,12 +18,12 @@ function PetDuoAvatar({ size = 28 }) {
       <img
         src="/charlie.jpg"
         alt=""
-        className="absolute inset-0 h-full w-full rounded-full border-2 border-ivory-50 object-cover shadow-sm"
+        className="absolute inset-0 h-full w-full rounded-full border-2 border-ivory-50 object-cover"
       />
       <img
         src="/kit.jpg"
         alt=""
-        className="absolute -bottom-0.5 -right-0.5 rounded-full border-2 border-ivory-50 object-cover shadow-sm"
+        className="absolute -bottom-0.5 -right-0.5 rounded-full border-2 border-ivory-50 object-cover"
         style={{ width: kitSize, height: kitSize }}
       />
     </span>
@@ -112,7 +112,7 @@ export default function ChatWidget() {
         onClick={() => setIsOpen((v) => !v)}
         aria-label={isOpen ? 'Close chat' : 'Ask about Marvin'}
         aria-expanded={isOpen}
-        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-forest-800 text-ivory-50 shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-forest-700"
+        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 cursor-pointer items-center justify-center border border-forest-300/30 bg-forest-950 text-ivory-50 transition-colors hover:border-gold-400"
       >
         {isOpen ? <X size={22} aria-hidden="true" /> : <PetDuoAvatar size={40} />}
       </button>
@@ -122,12 +122,12 @@ export default function ChatWidget() {
           role="dialog"
           aria-modal="false"
           aria-label="Chat about Marvin"
-          className="animate-scale-in fixed bottom-24 right-6 z-40 flex h-[32rem] max-h-[70vh] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-forest-700/10 bg-ivory-50 shadow-2xl"
+          className="animate-scale-in fixed bottom-24 right-6 z-40 flex h-[32rem] max-h-[70vh] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden border border-ink-900/10 bg-ivory-50 shadow-2xl"
         >
-          <div className="flex shrink-0 items-center justify-between border-b border-forest-700/10 bg-ivory-100 px-5 py-4">
+          <div className="flex shrink-0 items-center justify-between border-b border-ink-900/10 px-5 py-4">
             <div className="flex items-center gap-3">
               <PetDuoAvatar size={30} />
-              <p className="font-body text-xs font-semibold uppercase tracking-widest text-forest-600">
+              <p className="font-body text-xs font-semibold uppercase tracking-widest text-ink-700">
                 Ask about Marvin
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function ChatWidget() {
               type="button"
               onClick={() => setIsOpen(false)}
               aria-label="Close chat"
-              className="cursor-pointer rounded-full p-1.5 text-ink-700 transition-colors hover:bg-ivory-200 hover:text-ink-900"
+              className="cursor-pointer p-1.5 text-ink-700 transition-colors hover:bg-ink-900/5 hover:text-ink-900"
             >
               <X size={18} aria-hidden="true" />
             </button>
@@ -153,10 +153,10 @@ export default function ChatWidget() {
               >
                 {m.role === 'assistant' && <PetDuoAvatar size={26} />}
                 <p
-                  className={`max-w-[80%] min-w-0 whitespace-pre-wrap break-words rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                  className={`max-w-[80%] min-w-0 whitespace-pre-wrap break-words px-4 py-2.5 text-sm leading-relaxed ${
                     m.role === 'user'
-                      ? 'bg-forest-800 text-ivory-50'
-                      : 'bg-ivory-200 text-ink-900'
+                      ? 'bg-forest-950 text-ivory-50'
+                      : 'bg-ink-900/5 text-ink-900'
                   }`}
                 >
                   {m.content}
@@ -166,14 +166,14 @@ export default function ChatWidget() {
             {isLoading && (
               <div className="flex items-end justify-start gap-2">
                 <PetDuoAvatar size={26} />
-                <p className="rounded-2xl bg-ivory-200 px-4 py-2.5 text-sm text-ink-500">
+                <p className="bg-ink-900/5 px-4 py-2.5 text-sm text-ink-700">
                   <span className="animate-blink">&hellip;</span>
                 </p>
               </div>
             )}
           </div>
 
-          <div className="flex shrink-0 items-end gap-2 border-t border-forest-700/10 bg-ivory-100 px-3 py-3">
+          <div className="flex shrink-0 items-end gap-2 border-t border-ink-900/10 px-3 py-3">
             <textarea
               ref={inputRef}
               value={input}
@@ -182,14 +182,14 @@ export default function ChatWidget() {
               placeholder="Ask a question..."
               rows={1}
               maxLength={800}
-              className="max-h-24 flex-1 resize-none rounded-xl border border-forest-700/15 bg-ivory-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-forest-500"
+              className="max-h-24 flex-1 resize-none border border-ink-900/15 bg-ivory-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-forest-950"
             />
             <button
               type="button"
               onClick={sendMessage}
               disabled={isLoading || !input.trim()}
               aria-label="Send message"
-              className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-forest-800 text-ivory-50 transition-colors hover:bg-forest-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center border border-ink-900/15 bg-forest-950 text-ivory-50 transition-colors hover:border-gold-400 disabled:cursor-not-allowed disabled:opacity-40"
             >
               <Send size={16} aria-hidden="true" />
             </button>

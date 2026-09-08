@@ -1,34 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", serif;
+  --font-display: "Montserrat", sans-serif;
   --font-body: "Montserrat", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
 
   --color-forest-950: #0e1f17;
-  --color-forest-900: #14301f;
-  --color-forest-800: #1b4332;
-  --color-forest-700: #2d6a4f;
-  --color-forest-600: #40916c;
-  --color-forest-500: #52b788;
-  --color-forest-400: #74c69d;
   --color-forest-300: #95d5b2;
-  --color-forest-200: #b7e4c7;
   --color-forest-100: #d8f3dc;
 
   --color-gold-600: #a8791f;
-  --color-gold-500: #c89b3c;
   --color-gold-400: #ddb768;
-  --color-gold-300: #ecd19c;
 
   --color-ivory-50: #fbf9f3;
-  --color-ivory-100: #f3efe4;
-  --color-ivory-200: #e3dfcf;
 
   --color-ink-900: #14231c;
   --color-ink-700: #3a4b41;
-  --color-ink-500: #5c6f64;
 
   --animate-fade-in: fade-in 0.2s ease-out;
   --animate-scale-in: scale-in 0.2s ease-out;
@@ -89,8 +76,8 @@ main > section[id] {
 
 body {
   margin: 0;
-  background-color: var(--color-ivory-50);
-  color: var(--color-ink-900);
+  background-color: var(--color-forest-950);
+  color: var(--color-ivory-50);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

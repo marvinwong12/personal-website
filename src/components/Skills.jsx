@@ -2,31 +2,28 @@ import { skillGroups } from '../data/skills'
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-ivory-100 py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="font-body text-xs font-semibold uppercase tracking-widest text-forest-600">
+    <section id="skills" className="bg-forest-950 py-16">
+      <div className="mx-auto max-w-6xl px-[4.5rem]">
+        <p className="font-body text-sm font-bold uppercase tracking-[0.2em] text-gold-400 sm:text-base">
           Skills
         </p>
-        <h2 className="mt-4 max-w-2xl font-display text-3xl font-semibold text-ink-900 sm:text-4xl">
-          Tools I reach for most
-        </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2">
           {skillGroups.map((group) => (
-            <div key={group.label}>
-              <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-ink-500">
+            <div key={group.label} className="border-t border-forest-300/15 pt-4">
+              <h3 className="font-body text-xs font-semibold uppercase tracking-widest text-forest-300">
                 {group.label}
               </h3>
-              <div className="mt-4 flex flex-wrap gap-2.5">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="relative rounded-full border border-forest-700/15 bg-ivory-50 px-4 py-1.5 text-sm font-medium text-forest-800 shadow-sm transition-all duration-200 ease-out hover:z-10 hover:-translate-y-1 hover:scale-110 hover:shadow-md"
-                  >
-                    {item}
+              <p className="mt-4 text-lg leading-relaxed text-forest-100">
+                {group.items.map((item, i) => (
+                  <span key={item}>
+                    <span className="transition-colors hover:text-gold-400">{item}</span>
+                    {i < group.items.length - 1 && (
+                      <span className="text-forest-300/40"> &middot; </span>
+                    )}
                   </span>
                 ))}
-              </div>
+              </p>
             </div>
           ))}
         </div>
