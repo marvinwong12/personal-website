@@ -1,8 +1,8 @@
 import { ArrowUpRight, Users, X } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { projects } from '../data/projects'
 import { GithubIcon } from './icons/BrandIcons'
-import { prefersReducedMotion } from '../lib/motionPreference'
+import { revealClasses, useScrollReveal } from '../lib/useScrollReveal'
 
 function ProjectDetailModal({ project, onClose }) {
   useEffect(() => {
@@ -127,34 +127,14 @@ function ProjectDetailModal({ project, onClose }) {
 
 function ProjectRow({ project, index, onOpenDetails }) {
   const { name, tagline } = project
-  const [isVisible, setIsVisible] = useState(prefersReducedMotion)
-  const ref = useRef(null)
-
-  useEffect(() => {
-    if (prefersReducedMotion) return
-    const node = ref.current
-    if (!node) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.15 },
-    )
-    observer.observe(node)
-    return () => observer.disconnect()
-  }, [])
+  const [ref, isVisible] = useScrollReveal()
+  const reveal = revealClasses(isVisible, index * 80)
 
   return (
     <article
       ref={ref}
-      style={{ transitionDelay: prefersReducedMotion ? '0ms' : `${index * 80}ms` }}
-      className={`border-b border-forest-300/15 py-6 transition-all duration-700 ease-out last:border-b-0 last:pb-0 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-      }`}
+      style={reveal.style}
+      className={`border-b border-forest-300/15 py-6 last:border-b-0 last:pb-0 ${reveal.className}`}
     >
       <button
         type="button"

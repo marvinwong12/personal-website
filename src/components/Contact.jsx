@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { Mail } from 'lucide-react'
+import { revealClasses, useScrollReveal } from '../lib/useScrollReveal'
 
 const email = 'marvin.cy.wong@gmail.com'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [formRef, formVisible] = useScrollReveal()
+  const formReveal = revealClasses(formVisible)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -25,7 +28,12 @@ export default function Contact() {
           Contact
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-8 max-w-xl space-y-5">
+        <form
+          ref={formRef}
+          style={formReveal.style}
+          onSubmit={handleSubmit}
+          className={`mt-8 max-w-xl space-y-5 ${formReveal.className}`}
+        >
           <div>
             <label
               htmlFor="contact-name"

@@ -1,4 +1,11 @@
+import { revealClasses, useScrollReveal } from '../lib/useScrollReveal'
+
 export default function About() {
+  const [photoRef, photoVisible] = useScrollReveal()
+  const [textRef, textVisible] = useScrollReveal()
+  const photoReveal = revealClasses(photoVisible)
+  const textReveal = revealClasses(textVisible, 100)
+
   return (
     <section id="about" className="bg-forest-950 py-16">
       <div className="px-6 lg:pr-[clamp(72px,12.5vw-56px,124px)]">
@@ -6,7 +13,11 @@ export default function About() {
           About Me
         </p>
 
-        <div className="mt-6 w-full max-w-[20rem] overflow-hidden border border-forest-300/20">
+        <div
+          ref={photoRef}
+          style={photoReveal.style}
+          className={`mt-6 w-full max-w-[20rem] overflow-hidden border border-forest-300/20 ${photoReveal.className}`}
+        >
           <img
             src="/profile.jpg"
             alt="Portrait of Marvin Wong"
@@ -16,7 +27,11 @@ export default function About() {
           />
         </div>
 
-        <div className="mt-8 max-w-3xl space-y-6">
+        <div
+          ref={textRef}
+          style={textReveal.style}
+          className={`mt-8 max-w-3xl space-y-6 ${textReveal.className}`}
+        >
           <p className="text-base leading-relaxed text-forest-100">
             Hi! I&rsquo;m Marvin, a current Master of Engineering candidate in
             Data Science at UCLA. My core expertises include experimentation,

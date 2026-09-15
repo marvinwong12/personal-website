@@ -1,6 +1,7 @@
 import About from './components/About'
 import ChatWidget from './components/ChatWidget'
 import Contact from './components/Contact'
+import CursorGlow from './components/CursorGlow'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import ResumeModal from './components/ResumeModal'
@@ -18,6 +19,7 @@ function App() {
         Skip to content
       </a>
       <span id="top" />
+      <CursorGlow />
       <Sidebar />
       <main className="lg:ml-[50%]">
         <About />

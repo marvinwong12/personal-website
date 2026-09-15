@@ -1,6 +1,36 @@
 import { FileText } from 'lucide-react'
 import { experience } from '../data/experience'
 import { useResumeModal } from '../context/ResumeModalContext'
+import { revealClasses, useScrollReveal } from '../lib/useScrollReveal'
+
+function ExperienceRow({ job, index }) {
+  const [ref, isVisible] = useScrollReveal()
+  const reveal = revealClasses(isVisible, index * 80)
+
+  return (
+    <div
+      ref={ref}
+      style={reveal.style}
+      className={`border-b border-forest-300/15 py-6 ${reveal.className}`}
+    >
+      <p className="font-body text-xs font-semibold uppercase tracking-widest text-forest-300">
+        {job.dates}
+      </p>
+      <h3 className="mt-1 font-display text-lg font-semibold text-ivory-50">{job.role}</h3>
+      <p className="text-base text-forest-100">{job.company}</p>
+      <p className="mt-2 text-base leading-relaxed text-forest-100">
+        {job.skills.map((item, i) => (
+          <span key={item}>
+            {item}
+            {i < job.skills.length - 1 && (
+              <span className="text-forest-300/40"> &middot; </span>
+            )}
+          </span>
+        ))}
+      </p>
+    </div>
+  )
+}
 
 export default function Experience() {
   const { openResume } = useResumeModal()
@@ -13,29 +43,8 @@ export default function Experience() {
         </p>
 
         <div className="mt-8 max-w-3xl border-t border-forest-300/15">
-          {experience.map((job) => (
-            <div
-              key={`${job.company}-${job.role}`}
-              className="border-b border-forest-300/15 py-6"
-            >
-              <p className="font-body text-xs font-semibold uppercase tracking-widest text-forest-300">
-                {job.dates}
-              </p>
-              <h3 className="mt-1 font-display text-lg font-semibold text-ivory-50">
-                {job.role}
-              </h3>
-              <p className="text-base text-forest-100">{job.company}</p>
-              <p className="mt-2 text-base leading-relaxed text-forest-100">
-                {job.skills.map((item, i) => (
-                  <span key={item}>
-                    {item}
-                    {i < job.skills.length - 1 && (
-                      <span className="text-forest-300/40"> &middot; </span>
-                    )}
-                  </span>
-                ))}
-              </p>
-            </div>
+          {experience.map((job, i) => (
+            <ExperienceRow key={`${job.company}-${job.role}`} job={job} index={i} />
           ))}
         </div>
 
