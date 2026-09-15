@@ -96,21 +96,23 @@ function ProjectDetailModal({ project, onClose }) {
           )}
 
           <div className="mt-6 flex flex-wrap gap-6">
-            <a
-              href={github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-gold-600"
-            >
-              <GithubIcon size={16} />
-              Code
-            </a>
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-forest-700"
+              >
+                <GithubIcon size={16} />
+                Code
+              </a>
+            )}
             {demo && (
               <a
                 href={demo}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-gold-600"
+                className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-900 transition-colors hover:text-forest-700"
               >
                 <ArrowUpRight size={16} aria-hidden="true" />
                 Live demo
@@ -157,11 +159,11 @@ function ProjectRow({ project, index, onOpenDetails }) {
       <button
         type="button"
         onClick={() => onOpenDetails(project)}
-        className="block w-full cursor-pointer text-left font-display text-lg font-semibold text-ivory-50 underline decoration-forest-300/40 underline-offset-4 transition-colors hover:text-gold-400 hover:decoration-gold-400"
+        className="block w-full cursor-pointer text-left font-display text-lg font-semibold text-ivory-50 underline decoration-forest-300/40 underline-offset-4 transition-colors hover:decoration-ivory-50"
       >
         {name}
       </button>
-      <p className="mt-2 max-w-2xl text-lg leading-relaxed text-forest-100">{tagline}</p>
+      <p className="mt-2 max-w-2xl text-base leading-relaxed text-forest-100">{tagline}</p>
     </article>
   )
 }
@@ -170,7 +172,7 @@ export default function ProjectList() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <div className="mt-12 border-t border-forest-300/15">
+    <div className="mt-12 max-w-3xl border-t border-forest-300/15">
       {projects.map((project, i) => (
         <ProjectRow
           key={project.slug}

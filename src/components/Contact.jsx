@@ -19,9 +19,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-forest-950 py-16 text-ivory-50">
-      <div className="mx-auto max-w-6xl px-[4.5rem]">
-        <p className="font-body text-sm font-bold uppercase tracking-[0.2em] text-gold-400 sm:text-base">
+    <section id="contact" className="bg-forest-950 py-16 pb-24 text-ivory-50">
+      <div className="px-6 lg:pr-[clamp(72px,12.5vw-56px,124px)]">
+        <p className="font-body text-sm font-bold uppercase tracking-[0.2em] text-forest-100 sm:text-base">
           Contact
         </p>
 
@@ -40,7 +40,7 @@ export default function Contact() {
               required
               value={form.name}
               onChange={handleChange}
-              className="mt-2 w-full border border-forest-300/30 bg-transparent px-4 py-3 text-ivory-50 outline-none transition-colors focus:border-gold-400"
+              className="mt-2 w-full border border-forest-300/30 bg-transparent px-4 py-3 text-ivory-50 outline-none transition-colors focus:border-ivory-50"
             />
           </div>
 
@@ -58,7 +58,7 @@ export default function Contact() {
               required
               value={form.email}
               onChange={handleChange}
-              className="mt-2 w-full border border-forest-300/30 bg-transparent px-4 py-3 text-ivory-50 outline-none transition-colors focus:border-gold-400"
+              className="mt-2 w-full border border-forest-300/30 bg-transparent px-4 py-3 text-ivory-50 outline-none transition-colors focus:border-ivory-50"
             />
           </div>
 
@@ -76,13 +76,13 @@ export default function Contact() {
               required
               value={form.message}
               onChange={handleChange}
-              className="mt-2 w-full resize-none border border-forest-300/30 bg-transparent px-4 py-3 text-ivory-50 outline-none transition-colors focus:border-gold-400"
+              className="mt-2 w-full resize-none border border-forest-300/30 bg-transparent px-4 py-3 text-ivory-50 outline-none transition-colors focus:border-ivory-50"
             />
           </div>
 
           <button
             type="submit"
-            className="inline-flex cursor-pointer items-center gap-2 bg-gold-400 px-8 py-4 font-body text-xs font-semibold uppercase tracking-widest text-ink-900 transition-opacity hover:opacity-85"
+            className="inline-flex cursor-pointer items-center gap-2 bg-ivory-50 px-8 py-4 font-body text-xs font-semibold uppercase tracking-widest text-ink-900 transition-opacity hover:opacity-85"
           >
             <Mail size={16} aria-hidden="true" />
             Send message

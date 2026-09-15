@@ -42,7 +42,7 @@ export default function ResumeModal() {
             <a
               href="/Marvin_Wong_Resume.pdf"
               download
-              className="inline-flex cursor-pointer items-center gap-2 border border-ink-900/15 px-4 py-2 font-body font-semibold text-xs uppercase tracking-widest text-ink-900 transition-colors hover:border-gold-600 hover:text-gold-600"
+              className="inline-flex cursor-pointer items-center gap-2 border border-ink-900/15 px-4 py-2 font-body font-semibold text-xs uppercase tracking-widest text-ink-900 transition-colors hover:border-forest-700 hover:text-forest-700"
             >
               <Download size={14} aria-hidden="true" />
               Download
@@ -71,7 +71,7 @@ export default function ResumeModal() {
               <a
                 href="/Marvin_Wong_Resume.pdf"
                 download
-                className="inline-flex cursor-pointer items-center gap-2 border border-ink-900/15 px-6 py-3 font-body font-semibold text-xs uppercase tracking-widest text-ink-900 transition-colors hover:border-gold-600 hover:text-gold-600"
+                className="inline-flex cursor-pointer items-center gap-2 border border-ink-900/15 px-6 py-3 font-body font-semibold text-xs uppercase tracking-widest text-ink-900 transition-colors hover:border-forest-700 hover:text-forest-700"
               >
                 <Download size={16} aria-hidden="true" />
                 Download Resume (PDF)

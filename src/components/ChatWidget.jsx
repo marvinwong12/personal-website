@@ -112,7 +112,7 @@ export default function ChatWidget() {
         onClick={() => setIsOpen((v) => !v)}
         aria-label={isOpen ? 'Close chat' : 'Ask about Marvin'}
         aria-expanded={isOpen}
-        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 cursor-pointer items-center justify-center border border-forest-300/30 bg-forest-950 text-ivory-50 transition-colors hover:border-gold-400"
+        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 cursor-pointer items-center justify-center border border-forest-300/30 bg-forest-950 text-ivory-50 transition-colors hover:border-ivory-50"
       >
         {isOpen ? <X size={22} aria-hidden="true" /> : <PetDuoAvatar size={40} />}
       </button>
@@ -189,7 +189,7 @@ export default function ChatWidget() {
               onClick={sendMessage}
               disabled={isLoading || !input.trim()}
               aria-label="Send message"
-              className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center border border-ink-900/15 bg-forest-950 text-ivory-50 transition-colors hover:border-gold-400 disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center border border-ink-900/15 bg-forest-950 text-ivory-50 transition-colors hover:border-ivory-50 disabled:cursor-not-allowed disabled:opacity-40"
             >
               <Send size={16} aria-hidden="true" />
             </button>

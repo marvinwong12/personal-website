@@ -75,4 +75,19 @@ export const projects = [
     demo: 'https://scifi-fantasy-recommender-1093855474171.us-central1.run.app/',
     metric: null,
   },
+  {
+    slug: 'visual-intelligence',
+    name: 'Visual Intelligence',
+    tagline:
+      'An end-to-end computer vision pipeline that tracks a target individual across video footage and verifies their identity from a single reference image.',
+    description:
+      'Engineered an end-to-end computer vision pipeline for a Securiport-sponsored graduate capstone aimed at expediting airport security screening. Using a YOLOv8 detection model paired with a multi-object tracking algorithm, the system detects and follows a target individual across video footage starting from just a single reference image.\n\nFor identity verification, I built a system around a deep-learning face-recognition model (ArcFace) served via ONNX Runtime with GPU acceleration, aggregating cosine-similarity scores across multiple observations per tracked individual to reach 98.4% top-1 identification accuracy on a benchmark evaluation. I also deployed a Vision-Language Model (Qwen3-VL) with custom prompt engineering to generate natural-language behavior descriptions from video evidence, then built a rule-based aggregation layer to combine multi-segment predictions into one structured summary, reaching 96.4% classification accuracy on an internal evaluation set.',
+    tech: ['Python', 'YOLOv8', 'ArcFace', 'ONNX Runtime', 'Qwen3-VL', 'Prompt Engineering'],
+    category: 'Computer Vision',
+    modalImages: ['/projects/visual-intelligence-demo.jpg'],
+    status: 'in-progress',
+    github: null,
+    demo: null,
+    metric: { label: 'ID Accuracy', value: '98.4%' },
+  },
 ]
