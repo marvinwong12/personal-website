@@ -90,4 +90,30 @@ export const projects = [
     demo: null,
     metric: { label: 'ID Accuracy', value: '98.4%' },
   },
+  {
+    slug: 'portfolio-risk-analytics',
+    name: 'Portfolio & Risk Analytics',
+    tagline:
+      'A full-stack portfolio optimization platform that walk-forward backtests investment strategies with bootstrapped confidence intervals, so you can tell real edge from noise.',
+    description:
+      'A Flask web app for mean-variance portfolio optimization, individual stock analysis, and walk-forward backtesting, built to check whether the optimization actually works out-of-sample rather than just drawing a nice efficient-frontier plot. Given a list of tickers, it pulls historical prices, computes minimum-variance and tangency (max Sharpe) portfolios with Ledoit-Wolf shrinkage covariance (long-only via a bounded SLSQP optimization), and visualizes the efficient frontier as a Monte Carlo cloud overlaid with the exact frontier curve. Each user registers an account and manages their own portfolios, with CSRF protection on every state-changing request.\n\nThe backtest walks forward through history, estimating weights at each quarterly rebalance from only the trailing 252 trading days and holding through the next 63, net of transaction costs and against equal-weight and S&P 500 benchmarks. Paired block-bootstrap confidence intervals (21-day blocks, 2,000 resamples) on every Sharpe ratio showed that on five correlated mega-cap stocks none of the differences were statistically real. On a diversified basket (SPY, BND, GLD, VNQ), minimum variance was significantly worse than equal weight (ΔSharpe -0.63, 95% CI [-1.15, -0.15]): it hit the lowest volatility and drawdown but gave up too much return.\n\nThe dashboard also runs portfolio-level risk analysis (VaR, CVaR, max drawdown, and each asset’s share of total risk versus its weight, which flagged a 42% position driving over 60% of portfolio risk) and single-stock analysis with valuation ratios, technical indicators (RSI, MACD, Bollinger Bands), and a simplified DCF. A TTL cache in front of the Yahoo Finance API cut repeat load times from ~540ms to under 1ms, and a pytest suite of 274 tests (93% coverage, run through GitHub Actions CI) guards the math, including a no-lookahead guarantee for the backtest engine. Deployed on Render.',
+    tech: [
+      'Python',
+      'Flask',
+      'SQLAlchemy',
+      'NumPy',
+      'pandas',
+      'scikit-learn',
+      'Matplotlib',
+      'pytest',
+      'GitHub Actions',
+      'Render',
+    ],
+    category: 'Quantitative Finance',
+    modalImages: ['/projects/portfolio-risk-analytics-dashboard.webp'],
+    status: 'live',
+    github: null,
+    demo: 'https://portfolio-optimization-application.onrender.com/',
+    metric: { label: 'Cache Speedup', value: '500x+' },
+  },
 ]
