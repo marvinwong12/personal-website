@@ -68,6 +68,8 @@ function ProjectDetailModal({ project, onClose }) {
                   key={src}
                   src={src}
                   alt={`${name} visualization`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full border border-ink-900/10"
                 />
               ))}
@@ -75,10 +77,15 @@ function ProjectDetailModal({ project, onClose }) {
           )}
 
           {demoVideo && (
-            <img
+            <video
               src={demoVideo}
-              alt={`${name} demo`}
+              aria-label={`${name} demo`}
               className="mt-4 w-full border border-ink-900/10"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
             />
           )}
 
